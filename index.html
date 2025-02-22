@@ -446,6 +446,40 @@
     </div>
 </div>
 
+<div class="app-window" id="spreadsheet">
+    <div class="app-header">
+        <span><img src="tableur.png" width="20" height="20"> PandaSheet</span>
+        <button class="close-btn" onclick="closeApp('spreadsheet')">x</button>
+    </div>
+    <div class="app-content overflow-auto">
+        <table class="min-w-full border-collapse border border-gray-300">
+            <thead>
+                <tr>
+                    <th class="border border-gray-300 bg-gray-100 p-2">#</th>
+                    <th class="border border-gray-300 bg-gray-100 p-2">A</th>
+                    <th class="border border-gray-300 bg-gray-100 p-2">B</th>
+                    <th class="border border-gray-300 bg-gray-100 p-2">C</th>
+                    <th class="border border-gray-300 bg-gray-100 p-2">D</th>
+                    <th class="border border-gray-300 bg-gray-100 p-2">E</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    for (let i = 1; i <= 10; i++) {
+                        document.write('<tr>');
+                        document.write(`<td class="border border-gray-300 bg-gray-100 p-2 text-center">${i}</td>`);
+                        for (let j = 0; j < 5; j++) {
+                            document.write('<td class="border border-gray-300 p-2"><input type="text" class="w-full p-1 focus:outline-none" /></td>');
+                        }
+                        document.write('</tr>');
+                    }
+                </script>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
 <div class="app-window" id="browser">
     <div class="app-header">
         <span><img src="microsoft.png" width="20" height="20"> Edge Browser</span>
