@@ -301,7 +301,9 @@
             <li class="start-menu-item" onclick="openApp('opal')">
               <img src="Opal-modified.png" alt="Opal assistant" width="20" height="20">  Opal assistant
             </li>
-            <!-- Add more apps here -->
+            <li class="satrt-menu-item" onclick="openApp('credits')">
+                <img src="creator.png" alt="Crédits" width="20" height="20"> Crédits
+            </li>
         </ul>
     </div>
     <div class="taskbar">
@@ -337,6 +339,9 @@
             </div>
             <div class="icon" onclick="openApp('opal')">
               <img src="Opal-modified.png" alt="Opal" width="20" height="20">
+            </div>
+            <div class="icon" onclick="openApp('credits')">
+                <img src="creator.png" alt="Crédits" width="20" height="20">
             </div>
             <!-- Add more icons here -->
         </div>
@@ -548,6 +553,23 @@
         <!--Opal content -->
         <iframe id="opalFrame" src="https://arthur-lenoble.github.io/opal-1.0-Poet-IQ150/" class="w-full h-[60vh] border border-gray-300 rounded-lg"></iframe>
       </div>
+    </div>
+    <div class="app-window" is="credits">
+        <div class="app-header">
+            <span><img src="creator.png" width="20" height="20">    Crédits</span>
+            <button class="close-btn" onclick="closeApp('credits')">x</button>
+        </div>
+        <div class="app-content">
+            Crédits : 
+            Création du système d'exploitation : Arthur Lenoble
+            Icône Opal : Arthur Lenoble/Opal AI
+            Icônes Flaticon : Smashicon
+                              Freepik
+                              Vectorsmarket15
+                              Pocike
+                              Pixel perfect
+                              Slameticon
+        </div>
     </div>
 
     <script>
