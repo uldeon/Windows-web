@@ -120,7 +120,9 @@
             left: 0 !important;
             width: 100% !important;
             height: 100% !important;
-            resize: none;
+            transform: none !important; /* Désactive le centrage */
+            border-radius: 0 !important; /* Supprime l'arrondi */
+            transition: none !important; /* Pas d'animation */
         }
 
         @keyframes fadeIn {
@@ -602,9 +604,13 @@
 
     <script>
   function toggleFullscreenWindow(appId) {
-            const window = document.getElementById(appId);
-            window.classList.toggle('fullscreen');
-        }
+    const appWindow = document.getElementById(appId);
+    appWindow.classList.toggle('fullscreen');
+    
+    // Forcer le navigateur à recalculer la mise en page
+    appWindow.offsetHeight; 
+}
+
         
         document.querySelectorAll('.app-window').forEach(window => {
     const header = window.querySelector('.app-header');
