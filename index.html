@@ -146,6 +146,7 @@
             cursor: move;
         }
          .maximize-btn {
+            padding: 3px;
             background-color: transparent;
             border: none;
             color: white;
@@ -163,6 +164,7 @@
         }
 
         .close-btn {
+            padding: 3px;
             background-color: transparent;
             border: none;
             color: white;
@@ -374,7 +376,7 @@
     <div class="app-window" id="fileExplorer">
         <div class="app-header">
             <span><img src="dossiers.png" width="20" height="20">     File Explorer (not implemented yet)</span>
-            <button class="maximize-btn" onclick="toggleFullscreen('fileExplorer')">( )</button>
+            <button class="maximize-btn" onclick="toggleFullscreenWindow('fileExplorer')">()</button>
             <button class="close-btn" onclick="closeApp('fileExplorer')">x</button>
         </div>
         <div class="app-content">
@@ -599,12 +601,9 @@
     </div>
 
     <script>
- function toggleFullscreen() {
-            if (!document.fullscreenElement) {
-                document.documentElement.requestFullscreen();
-            } else {
-                document.exitFullscreen();
-            }
+  function toggleFullscreenWindow(appId) {
+            const window = document.getElementById(appId);
+            window.classList.toggle('fullscreen');
         }
         
         document.querySelectorAll('.app-window').forEach(window => {
