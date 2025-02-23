@@ -92,6 +92,11 @@
         }
 
         .app-window {
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 10;
+            cursor: default;
             align-items: center;
             justify-content: center;
             position: fixed;
@@ -131,6 +136,7 @@
             align-items: center;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
+            cursor: move;
         }
 
         .app-content {
@@ -574,6 +580,30 @@
     </div>
 
     <script>
+        document.querySelectorAll('.app-window').forEach(window => {
+    const header = window.querySelector('.app-header');
+    let offsetX = 0, offsetY = 0, isDragging = false;
+
+    header.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        offsetX = e.clientX - window.offsetLeft;
+        offsetY = e.clientY - window.offsetTop;
+        window.style.zIndex = 1000; // Passe au premier plan
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (isDragging) {
+            window.style.left = `${e.clientX - offsetX}px`;
+            window.style.top = `${e.clientY - offsetY}px`;
+        }
+    });
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+        window.style.zIndex = 10; // Remet à la normale
+    });
+});
+
        const editorElement = document.getElementById('editor');
     editorElement.addEventListener('input', () => {
         localStorage.setItem('pandaWriterContent', editorElement.innerHTML);
