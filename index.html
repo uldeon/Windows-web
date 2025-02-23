@@ -115,6 +115,13 @@
             transition: transform 0.3s;
             animation: fadeIn 0.3s;
         }
+         .app-window.fullscreen {
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            resize: none;
+        }
 
         @keyframes fadeIn {
             from {
@@ -137,6 +144,17 @@
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
             cursor: move;
+        }
+         .maximize-btn {
+            background-color: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 20px
+        }
+        .maximize-btn:hover {
+            color: green;
+            font-size: 25px;
         }
 
         .app-content {
@@ -356,6 +374,7 @@
     <div class="app-window" id="fileExplorer">
         <div class="app-header">
             <span><img src="dossiers.png" width="20" height="20">     File Explorer (not implemented yet)</span>
+            <button class="maximize-btn" onclick="toggleFullscreen('fileExplorer')">( )</button>
             <button class="close-btn" onclick="closeApp('fileExplorer')">x</button>
         </div>
         <div class="app-content">
@@ -580,6 +599,14 @@
     </div>
 
     <script>
+ function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen();
+            } else {
+                document.exitFullscreen();
+            }
+        }
+        
         document.querySelectorAll('.app-window').forEach(window => {
     const header = window.querySelector('.app-header');
     let offsetX = 0, offsetY = 0, isDragging = false;
