@@ -297,8 +297,8 @@
     }
     </style>
 </head>
-<body>
-    <audio id="audioStartup" src="Windows_11.mp3" autoplay muted></audio>
+<body onclick="playStartupSound()">
+    <audio id="audioStartup" src="Windows_11.mp3"></audio>
     <div class="start-menu" id="startMenu">
         <img src="logo.png" alt="Start Menu" width="50" height="50">
         <ul class="list-group">
@@ -616,12 +616,6 @@
 
     <script>
 
-    window.addEventListener('load', function() {
-    const audio = document.getElementById('audioStartup');
-    audio.muted = false;
-    audio.play();
-});
-
   function toggleFullscreenWindow(appId) {
     const appWindow = document.getElementById(appId);
     appWindow.classList.toggle('fullscreen');
@@ -712,5 +706,13 @@
             document.body.classList.toggle('dark-mode', theme === 'dark');
         }
     </script>
+    <script>
+    function playStartupSound() {
+        const audio = document.getElementById('audioStartup');
+        audio.play();
+        document.body.onclick = null; // Désactive l'événement après la première lecture
+    }
+</script>
+
 </body>
 </html>
