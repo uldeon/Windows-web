@@ -358,6 +358,7 @@
         </ul>
         <button class="shutdown-button" onclick="afficherGif()">Shut down</button>
         <img id="gifShutdown" src="IMG_0826.gif" style="display:none;" class="fullscreen-gif">
+        <audio id="monAudio" src="Windows 10 shutdown 2.mp3"></audio>
     </div>
     <div class="taskbar">
         <button class="start-button btn btn-primary" onclick="toggleStartMenu()"> <img src="logo.png" alt="Start" width="20" height="20"></button>
@@ -639,7 +640,8 @@
     <script>
 
         function afficherGif() {
-        document.getElementById('gifShutdown').style.display = 'block';
+            document.getElementById('monAudio').play();
+            document.getElementById('gifShutdown').style.display = 'block';
     }
         
   function toggleFullscreenWindow(appId) {
