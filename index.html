@@ -352,14 +352,14 @@
             <li class="start-menu-item" onclick="openApp('opal')">
               <img src="Opal-modified.png" alt="Opal assistant" width="20" height="20">  Opal assistant
             </li>
-            <li class="start-menu-item" onclick="openApp('credits')">
+            <audio id="notif" src="notification.mp3">
+            <li class="start-menu-item" onclick="openApp('credits'); document.getElementById('notif').play();">
                 <img src="creator.png" alt="Crédits" width="20" height="20"> Crédits
             </li>
         </ul>
-        <audio id="notif" src="notification.mp3">
-        <button class="shutdown-button" onclick="afficherGif(); document.getElementById('notif').play();">Shut down</button>
+        <button class="shutdown-button" onclick="afficherGif()">Shut down</button>
         <img id="gifShutdown" src="IMG_0826.gif" style="display:none;" class="fullscreen-gif">
-        <audio id="monAudio" src="Windows 10 shutdown 2.mp3"></audio>
+        <audio id="monAudio" src="Windows 10 shutdown 2.mp3">
     </div>
     <div class="taskbar">
         <button class="start-button btn btn-primary" onclick="toggleStartMenu()"> <img src="logo.png" alt="Start" width="20" height="20"></button>
