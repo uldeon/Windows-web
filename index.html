@@ -356,7 +356,8 @@
                 <img src="creator.png" alt="Crédits" width="20" height="20"> Crédits
             </li>
         </ul>
-        <button class="shutdown-button" onclick="afficherGif()">Shut down</button>
+        <audio id="notif" src="notification.mp3">
+        <button class="shutdown-button" onclick="afficherGif(); document.getElementById('notif').play();">Shut down</button>
         <img id="gifShutdown" src="IMG_0826.gif" style="display:none;" class="fullscreen-gif">
         <audio id="monAudio" src="Windows 10 shutdown 2.mp3"></audio>
     </div>
@@ -394,7 +395,8 @@
             <div class="icon" onclick="openApp('opal')">
               <img src="Opal-modified.png" alt="Opal" width="20" height="20">
             </div>
-            <div class="icon" onclick="openApp('credits')">
+            <audio id="notif" src="notification.mp3">
+            <div class="icon" onclick="openApp('credits'); document.getElementById('notif').play();">
                 <img src="creator.png" alt="Crédits" width="20" height="20">
             </div>
             <!-- Add more icons here -->
