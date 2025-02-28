@@ -21,6 +21,17 @@
             border-radius: 5px;
             animation: fadeIn 2s
         }
+        .fullscreen-gif {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 9999;
+}
+
 
         .start-menu {
             position: fixed;
@@ -346,7 +357,7 @@
             </li>
         </ul>
         <button class="shutdown-button" onclick="afficherGif()">Shut down</button>
-        <img id="gifShutdown" src="IMG_0826.gif" style="display:none;">
+        <img id="gifShutdown" src="IMG_0826.gif" style="display:none;" class="fullscreen-gif">
     </div>
     <div class="taskbar">
         <button class="start-button btn btn-primary" onclick="toggleStartMenu()"> <img src="logo.png" alt="Start" width="20" height="20"></button>
