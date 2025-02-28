@@ -13,6 +13,14 @@
             transition: background-color 0.3s;
         }
 
+        .shutdown-button {
+            background-color: #0078d7;
+            color: white;
+            border: none;
+            padding: 5px 5px;
+            border-radius: 5px;
+            animation: fadeIn 2s
+
         .start-menu {
             position: fixed;
             bottom: 40px;
@@ -336,7 +344,7 @@
                 <img src="creator.png" alt="Crédits" width="20" height="20"> Crédits
             </li>
         </ul>
-        <button onclick="afficherGif()">Shut down</button>
+        <button class="shutdown-button" onclick="afficherGif()">Shut down</button>
         <img id="gifShutdown" src="IMG_0826.gif" style="display:none;">
     </div>
     <div class="taskbar">
